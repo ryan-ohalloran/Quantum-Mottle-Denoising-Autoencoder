@@ -2,6 +2,11 @@
 
 import cv2
 import numpy as np
+import os
+
+PATH = '.'
+NOISE_FACTOR = 900.0
+# BATCH_PATH = '/Users/ryanohalloran/Documents/JuniorS2/NeuralNetworks/ProjectGithub/Quantum-Mottle-Denoising-Autoencoder/test'
 
 def add_poisson_noise(noiseFactor: float, inputFileName: str, outputFileName: str)->None:
     '''
@@ -20,4 +25,7 @@ def add_poisson_noise(noiseFactor: float, inputFileName: str, outputFileName: st
     # Save the noisy image
     cv2.imwrite(outputFileName, noisy_img)
 
-add_poisson_noise(1000., "image.png", "yy.png")
+# Execute noiser
+for file in os.listdir(PATH):
+    if file.endswith('.png') and not file.startswith('noisy'):
+        add_poisson_noise(NOISE_FACTOR, file, f'noisy_{file}')
