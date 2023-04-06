@@ -68,6 +68,7 @@ To run the model, run each code block except for the training block (this takes 
 When you reach the block with the following:
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 my_best_model = "/content/drive/MyDrive/NeuralNetworks/best_model.pth"
 
 ### Make sure to put the path to your weights instead of the path I have listed. 
@@ -82,9 +83,6 @@ After adding the weights, just keep running the blocks until you reach the last 
 
 [Noisy Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
 
-And add them to your drive (these are random images taken from the test set).
-
-After this, you should get output showing the clean, noisy, and cleaned image.
 
 And add them to your drive (these are random images taken from the test set).
 
