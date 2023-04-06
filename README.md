@@ -71,9 +71,9 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 my_best_model = "/content/drive/MyDrive/NeuralNetworks/best_model.pth"
 
-### Make sure to put the path to your weights instead of the path I have listed. 
+### Make sure to put the path to your weights into the my_best_model variable instead of the path I have listed. 
 
-#### You can use find my weights here:
+#### You can use my weights here:
 
 [Weights for model](https://drive.google.com/file/d/1cGIv0qslL-fzNQ_y7yj6UtJYGFbmKKTz/view?usp=sharing)
 
