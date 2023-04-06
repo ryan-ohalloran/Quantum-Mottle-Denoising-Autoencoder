@@ -1,3 +1,5 @@
+# Quantum Mottle Denoising Autoencoder
+
 My denoising autoencoder architecture consists of two primary components: the encoder and the decoder. I chose to give my encoder three convolutional layers and a fully connected layer. This allows it to learn a compressed representation of input image (the noisy image). The decoder consists of four transposed convolutional layers. These allow it to reconstruct a cleaned version of the noisy input image. I decidd to go with mean squared error (MSE) for my loss function. MSE is pretty standard for images like this, and it's commonly used in similar projects. It also is good at penalizing large differences between predicted and true images to help minimize noise in the image. For my optimization algorithm, I chose the Adam optimizer. Aside from being an optimizer we've used in class, the way the Adam optimizer adapts the learning rate based on the gradient of its error with respect to the weights is suitable for this project.
 
 My project doesn't have classify images 'correctly' or 'incorrectly', but rather reconstructs an input image. So, one way to measure how well my architecture is learning is through watching the trend of the loss value as the network trains. After much trial and error, I got the loss generated from my training to decrease with more and more training. Here is the output of my last epoch of training:  
@@ -54,3 +56,36 @@ See that image here:
 I think my main issue is just fine-tuning my encoder and decoder to produce better output. The dataset I drew from for these images gave them in 1024x1024 format, but that was just too much data to process. Because of this, I decided to resize my images down to 512x512. This definitely took away some accuracy, but not to the extent seen by the above images. With more trial and error, I think I can make these a lot better. The loss values I was getting led me to believe my model was working really, really well, but when I looked at the output images at the end, I realized how much precision I had lost. Perhaps more training/more variation in images would be best. 
 
 I did do a little testing to find a saturation point at which adding additional images no longer made sense, and although I definitely didn't find an exact point, I found that cutting my original break-down of 7,200 pairs in training, 2,400 pairs in validation, and 2,400 pairs in test into 1/4 (yielding 1,800 training pairs, 600 validation pairs, and 600 test pairs) was adequate. I think that my main issue now is just fine-tuning my algorithm, greatly improving its ability to reconstruct the images, and reducing accuracy loss. This is a tough task, but it's also something I know I am capable of achieving. 
+
+---------------------------------------------------------
+# Running the Jupyter Notebook
+I developed and ran my model exclusively within Google Colaboratory. You can either download the Jupyter notebook from here, or just make a copy of my Project on Colabs [Link Here](https://colab.research.google.com/drive/1yNGDgLccqtCsBuoVYbiwM-LXXFNCwLX6?usp=sharing).
+
+### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so CPU). I have not yet tested with GPU.
+
+To run the model, run each code block except for the training block (this takes a really long time to fully complete).
+
+When you reach the block with the following:
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+my_best_model = "/content/drive/MyDrive/NeuralNetworks/best_model.pth"
+
+### Make sure to put the path to your weights instead of the path I have listed. 
+
+#### You can use find my weights here:
+
+[Weights for model](https://drive.google.com/file/d/1cGIv0qslL-fzNQ_y7yj6UtJYGFbmKKTz/view?usp=sharing)
+
+After adding the weights, just keep running the blocks until you reach the last one. At that point, download these image files:
+
+[Clean Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
+
+[Noisy Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
+
+And add them to your drive (these are random images taken from the test set).
+
+After this, you should get output showing the clean, noisy, and cleaned image.
+
+And add them to your drive (these are random images taken from the test set).
+
+After this, you should get output showing the clean, noisy, and cleaned image.
