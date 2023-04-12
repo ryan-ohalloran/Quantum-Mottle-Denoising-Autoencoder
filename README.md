@@ -61,7 +61,7 @@ I did do a little testing to find a saturation point at which adding additional 
 # Running the Jupyter Notebook
 I developed and ran my model exclusively within Google Colaboratory. You can either download the Jupyter notebook from here, or just make a copy of my Project on Colabs [Link Here](https://colab.research.google.com/drive/1yNGDgLccqtCsBuoVYbiwM-LXXFNCwLX6?usp=sharing).
 
-### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so CPU). I have not yet tested with GPU.
+### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so using CPU instead of GPU). I have not yet tested with GPU.
 
 To run the model, run each code block except for the training block (this takes a really long time to fully complete).
 
@@ -77,7 +77,7 @@ my_best_model = "/content/drive/MyDrive/NeuralNetworks/best_model.pth"
 
 [Weights for model](https://drive.google.com/file/d/1cGIv0qslL-fzNQ_y7yj6UtJYGFbmKKTz/view?usp=sharing)
 
-After adding the weights, just keep running the blocks until you reach the last one. At that point, download these image files:
+After adding the weights, just keep running the blocks until you reach the last one. At that point, download these image files and add their paths into the last training block's path:
 
 [Clean Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
 
