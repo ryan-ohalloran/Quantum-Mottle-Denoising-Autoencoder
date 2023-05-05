@@ -58,32 +58,35 @@ I think my main issue is just fine-tuning my encoder and decoder to produce bett
 I did do a little testing to find a saturation point at which adding additional images no longer made sense, and although I definitely didn't find an exact point, I found that cutting my original break-down of 7,200 pairs in training, 2,400 pairs in validation, and 2,400 pairs in test into 1/4 (yielding 1,800 training pairs, 600 validation pairs, and 600 test pairs) was adequate. I think that my main issue now is just fine-tuning my algorithm, greatly improving its ability to reconstruct the images, and reducing accuracy loss. This is a tough task, but it's also something I know I am capable of achieving. 
 
 ---------------------------------------------------------
-# Running the Jupyter Notebook
+# Running the Project
 I developed and ran my model exclusively within Google Colaboratory. You can either download the Jupyter notebook from here, or just make a copy of my Project on Colabs [Link Here](https://colab.research.google.com/drive/1yNGDgLccqtCsBuoVYbiwM-LXXFNCwLX6?usp=sharing).
 
-### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so using CPU instead of GPU). I have not yet tested with GPU.
+### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so using CPU instead of GPU). **Only run this project using CPU**.
 
-To run the model, run each code block except for the training block (this takes a really long time to fully complete).
+To run the model, run each code block except for the ones marked with:
 
-When you reach the block with the following:
+## "**Skip the following block if you are running to test my project**"
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+You will reach a section marked:
 
-my_best_model = "/content/drive/MyDrive/NeuralNetworks/best_model.pth"
+## "For individual testing"
 
-### Make sure to put the path to your weights into the my_best_model variable instead of the path I have listed. 
+Follow the directions listed on this step by putting paths to your clean and noisy image, as well as paths to each model's weights. 
 
-#### You can use my weights here:
+## You can download my weights here:
 
-[Weights for model](https://drive.google.com/file/d/1cGIv0qslL-fzNQ_y7yj6UtJYGFbmKKTz/view?usp=sharing)
+[Weights for original model](https://drive.google.com/file/d/1cGIv0qslL-fzNQ_y7yj6UtJYGFbmKKTz/view?usp=share_link)
 
-After adding the weights, just keep running the blocks until you reach the last one. At that point, download these image files and add their paths into the last training block's path:
+[Weights for new model](https://drive.google.com/file/d/19LiFFDfQQp8xhOBuL_I_QDjyr2Hhwzb3/view?usp=share_link)
 
-[Clean Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
+[Weights for sliding window model](https://drive.google.com/file/d/1RTQ4mP4T16mqsfu4ddjdiZNA7U_qRA5I/view?usp=share_link)
 
-[Noisy Image](https://drive.google.com/file/d/18i0SFMHmCDK0ujJccJI4YwzOMZuPjMlI/view?usp=share_link)
+## And you can download a sample clean and noisy image here:
 
+[Clean Image](https://drive.google.com/file/d/1M3ZCEfoikS6eLSiowyN9t3vV6Gtnn74r/view?usp=share_link)
 
-And add them to your drive (these are random images taken from the test set).
+[Noisy Image](https://drive.google.com/file/d/1RYBhDouNPmAVKpGuBBnEWeE6mVfRdnN-/view?usp=share_link)
 
-After this, you should get output showing the clean, noisy, and cleaned image.
+### Download all the above links and put them somewhere convenient in your Google Drive (or somewhere locally if you choose to run this locally)
+
+Then, just run the last two blocks to see how the models compare!
