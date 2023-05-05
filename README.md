@@ -63,7 +63,7 @@ I developed and ran my model exclusively within Google Colaboratory. You can eit
 
 ### As a note, I only tested my Project within Google Colabs using no hardware accelerator (so using CPU instead of GPU). **Only run this project using CPU**.
 
-To run the model, run each code block except for the ones marked with:
+To run the model, **run each code block** ***except*** **for the ones marked with**:
 
 ## "**Skip the following block if you are running to test my project**"
 
