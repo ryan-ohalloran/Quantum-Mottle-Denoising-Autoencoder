@@ -1,10 +1,9 @@
 # Quantum Mottle Denoising Autoencoder
 
-My denoising autoencoder architecture consists of two primary components: the encoder and the decoder. I chose to give my encoder three convolutional layers and a fully connected layer. This allows it to learn a compressed representation of input image (the noisy image). The decoder consists of four transposed convolutional layers. These allow it to reconstruct a cleaned version of the noisy input image. I decidd to go with mean squared error (MSE) for my loss function. MSE is pretty standard for images like this, and it's commonly used in similar projects. It also is good at penalizing large differences between predicted and true images to help minimize noise in the image. For my optimization algorithm, I chose the Adam optimizer. Aside from being an optimizer we've used in class, the way the Adam optimizer adapts the learning rate based on the gradient of its error with respect to the weights is suitable for this project.
-
-This all seemed good to me, but once I checked out the cleaned image vs. the noisy and original (clean) images, I realized it wasn't as good as I thought. 
-See that image here:
-![Images of the clean (original), noisy (with quantum noise), and cleaned (after runnning through model) X-rays](/output.png "Output on Test Data")
+See how the models compare here:
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through original model](/OriginalModel.png "Original model output on Test Data")
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through new model](/NewModel.png "New model output on Test Data")
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through sliding window model](/WindowModel.png "Window model output on Test Data")
 
 I think my main issue is just fine-tuning my encoder and decoder to produce better output. The dataset I drew from for these images gave them in 1024x1024 format, but that was just too much data to process. Because of this, I decided to resize my images down to 512x512. This definitely took away some accuracy, but not to the extent seen by the above images. With more trial and error, I think I can make these a lot better. The loss values I was getting led me to believe my model was working really, really well, but when I looked at the output images at the end, I realized how much precision I had lost. Perhaps more training/more variation in images would be best. 
 
