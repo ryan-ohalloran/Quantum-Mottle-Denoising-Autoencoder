@@ -28,7 +28,7 @@ On the test set for each model, I had the following losses:
 
 These values may lead one to think that the sliding window implementation had the worst results, but when looking at a visual representation of eah model's denoising, it's clear that ***WindowDenoisingAutoencoder*** was the best model at preserving localized details of all image pairs. 
  
-### See how the models compare visually here:
+### See how the models visually compare on test data here:
 ![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through original model](/OriginalModel.png "Original model output on Test Data")
 ![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through new model](/NewModel.png "New model output on Test Data")
 ![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays after running through sliding window model](/WindowModel.png "Window model output on Test Data")
@@ -43,7 +43,9 @@ When it came down to it, Google Colaboratory did not have give me the memory cap
 
 As for the results of my test set vs. my training and validation sets, this isn't as much of a concern for my project. As stated above, the training, validation, and test sets are all pulled at random from the same larger dataset, so each set is similar to one another (in aggregate, at least). The performance of my models on training data vs. test data is roughly equal (as well as across the validation class). See a visualization of each model's performance on the training data below:
 
-
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays from training data after running through original model](/TrainOriginalModel.png "Original model output on Training Data")
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays from training data after running through new model](/TrainNewModel.png "New model output on Training Data")
+![Images of the clean (original), noisy (with quantum noise), and cleaned X-Rays from training data after running through sliding window model](/TrainWindowModel.png "Window model output on Training Data")
 
 ---------------------------------------------------------
 # Running the Project
