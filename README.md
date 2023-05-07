@@ -2,6 +2,8 @@
 
 ### My Denoising Autoencoder implementation for denoising quantum mottle/noise within chest X-Rays
 
+#### Check out my project presentation for a full demo of how it works: [Project Demo](https://docs.google.com/presentation/d/1ib7q1B89Eghb0NEJpJqkWFSf9YPsaxEV6iwQT6AHKhQ/edit?usp=sharing)!
+
 For this project, I retrieved images from a [dataset](https://nihcc.app.box.com/v/ChestXray-NIHCC) of over 100,000 deidentified chest X-Rays from the NIH Clinical Center.
 
 Citation for source:
